@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MatchTracker",
-    "slug": "MatchTracker",
+    "slug": "matchtracker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,10 +19,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kolomiha2.matchtracker"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9914ac50-c0de-4134-b9f8-89a5e6cc5926"
+      }
+    },
+    "owner": "kolomiha2"
   }
 }
