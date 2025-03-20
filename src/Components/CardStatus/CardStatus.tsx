@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { MatchStatus } from '../../types/types';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { MatchStatus } from "../../types/types";
 
-type StatusClass = 'live' | 'waiting' | 'finished';
+type StatusClass = "live" | "waiting" | "finished";
 
 interface CardStatusProps {
   matchStatus: MatchStatus;
@@ -12,13 +12,13 @@ export const CardStatus: React.FC<CardStatusProps> = ({ matchStatus }) => {
   function resolveStatus(status: MatchStatus): StatusClass {
     switch (status) {
       case MatchStatus.Ongoing:
-        return 'live';
+        return "live";
       case MatchStatus.Scheduled:
-        return 'waiting';
+        return "waiting";
       case MatchStatus.Finished:
-        return 'finished';
+        return "finished";
       default:
-        return 'waiting';
+        return "waiting";
     }
   }
 
@@ -35,22 +35,22 @@ const styles = StyleSheet.create({
   status: {
     padding: 8,
     borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     fontWeight: 500,
   },
   text: {
-    color: 'white',
-    fontFamily: 'Inter',
+    color: "white",
+    fontFamily: "Inter",
     fontSize: 12,
   },
   live: {
-    backgroundColor: '#43AD28',
+    backgroundColor: "#43AD28",
   },
   waiting: {
-    backgroundColor: '#EB6402',
+    backgroundColor: "#EB6402",
   },
   finished: {
-    backgroundColor: '#EB0237',
+    backgroundColor: "#EB0237",
   },
 });

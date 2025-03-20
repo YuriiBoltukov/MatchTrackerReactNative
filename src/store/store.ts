@@ -1,8 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import matchReducer from "./matchSlice"
-
-
+import matchReducer from "./matchSlice";
 
 export const store = configureStore({
   reducer: {

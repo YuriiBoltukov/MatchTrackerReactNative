@@ -1,7 +1,7 @@
 export enum MatchStatus {
-  Finished = 'Finished',
-  Scheduled = 'Scheduled',
-  Ongoing = 'Ongoing',
+  Finished = "Finished",
+  Scheduled = "Scheduled",
+  Ongoing = "Ongoing",
 }
 
 export type Match = {

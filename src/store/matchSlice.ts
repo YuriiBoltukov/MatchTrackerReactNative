@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Match } from '../types/types';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Match } from "../types/types";
 
 interface MatchesState {
   allMatches: Match[];
@@ -25,9 +25,9 @@ const matchSlice = createSlice({
     },
     setFilteredMatches(state, action: PayloadAction<Match[]>) {
       state.filteredMatches = action.payload;
-    }
+    },
   },
 });
 
-export const { setMatches, setFilteredMatches  } = matchSlice.actions;
+export const { setMatches, setFilteredMatches } = matchSlice.actions;
 export default matchSlice.reducer;

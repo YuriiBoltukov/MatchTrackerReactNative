@@ -1,7 +1,7 @@
-import { Provider } from 'react-redux';
-import { store } from './src/store/store';
-import { HomeScreen } from './src/screens/HomeScreen';
-import { View, StyleSheet } from 'react-native';
+import { Provider } from "react-redux";
+import { store } from "./src/store/store";
+import { HomeScreen } from "./src/screens/HomeScreen";
+import { View, StyleSheet } from "react-native";
 
 export default function App() {
   return (
@@ -15,8 +15,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#06080C',
-  }
-})
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#06080C",
+  },
+});

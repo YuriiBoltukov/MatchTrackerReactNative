@@ -4,20 +4,34 @@ import { useDispatch, useSelector } from "react-redux";
 import { Picker } from "@react-native-picker/picker";
 import { AppDispatch, RootState } from "../../store/store";
 import { setFilteredMatches } from "../../store/matchSlice";
+import { ArrowFilterDown } from "../../../assets/icons/ArrowFilterDown";
 
 export const MatchFilter: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const allMatches = useSelector((state: RootState) => state.matches.allMatches);
-  const [selectedStatus, setSelectedStatus] = useState<string>('all');
+  const allMatches = useSelector(
+    (state: RootState) => state.matches.allMatches,
+  );
+  const [selectedStatus, setSelectedStatus] = useState<string>("all");
 
   const handleFilter = (status: string) => {
     setSelectedStatus(status);
-    dispatch(setFilteredMatches(status === 'all' ? allMatches : allMatches.filter((match) => match.status === status)));
+    console.log("All matches:", allMatches);
+    const filtered =
+      status === "all"
+        ? allMatches
+        : allMatches.filter((match) => match.status === status);
+    console.log("Filtered matches:", filtered);
+    dispatch(setFilteredMatches(filtered));
   };
 
   return (
     <View style={styles.container}>
-      <Picker selectedValue={selectedStatus} onValueChange={handleFilter} style={styles.picker} dropdownIconColor="#fff">
+      <Picker
+        selectedValue={selectedStatus}
+        onValueChange={handleFilter}
+        style={styles.picker}
+        dropdownIconColor="#fff"
+      >
         <Picker.Item label="Все матчи" value="all" />
         <Picker.Item label="Идут" value="Ongoing" />
         <Picker.Item label="Запланированы" value="Scheduled" />
@@ -33,19 +47,26 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginBottom: 10,
     borderWidth: 0,
-    borderColor: 'transparent',
+    borderColor: "transparent",
     maxWidth: 396,
-    display: 'flex',
+    display: "flex",
   },
   picker: {
     color: "#fff",
     backgroundColor: "#0B0E12",
     borderWidth: 0,
-    borderColor: 'transparent',
+    borderColor: "transparent",
     paddingVertical: 10,
     paddingRight: 20,
     paddingLeft: 16,
     height: 74,
-    alignItems: 'center',
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  iconWrapper: {
+    position: "absolute",
+    right: 10,
+    top: "50%",
+    transform: [{ translateY: -10 }],
   },
 });
